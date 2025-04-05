@@ -3,204 +3,245 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pranjal | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <title>Pranjal | Web Developer</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
-      background: #0a0a0a;
       font-family: 'Orbitron', sans-serif;
+      background: #0a0a0a;
       color: white;
-      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light {
+      background: #f5f5f5;
+      color: #111;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
     }
 
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
       text-align: center;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      padding: 2rem;
+      padding: 3rem 1.5rem;
     }
 
-    .hero h1 {
+    h1 {
       font-size: 3rem;
-      margin-bottom: 1rem;
-      color: cyan;
-      text-shadow: 0 0 20px cyan;
+      background: linear-gradient(to right, #0ff, #09f, #a0f);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
-    .hero h1 span {
-      color: #93c5fd;
+    .typing {
+      font-size: 1.5rem;
+      color: #60a5fa;
+      margin-top: 0.5rem;
     }
 
-    .hero p {
-      color: #cbd5e1;
-      font-size: 1.25rem;
+    .btn {
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      background: #0ff;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+      box-shadow: 0 0 15px #0ff;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #0ff;
     }
 
     section {
-      padding: 4rem 2rem;
+      padding: 3rem 1.5rem;
       text-align: center;
-      max-width: 1000px;
-      margin: auto;
     }
 
-    section h2 {
-      font-size: 2.5rem;
-      color: #67e8f9;
-      margin-bottom: 1rem;
-    }
-
-    .about p {
-      color: #cbd5e1;
-      font-size: 1.1rem;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .skill-tags span {
+    .glass-skill {
       background: rgba(255, 255, 255, 0.05);
-      padding: 0.75rem 1.5rem;
-      border-radius: 9999px;
+      backdrop-filter: blur(10px);
+      padding: 12px 24px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+      color: #00eaff;
       font-weight: bold;
-      color: #38bdf8;
-      box-shadow: 0 0 10px #06b6d4;
-      transition: 0.3s;
+      font-size: 1rem;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    .skill-tags span:hover {
+    .glass-skill:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 20px #3b82f6;
+      box-shadow: 0 0 20px #00eaff;
     }
 
-    #contact p {
-      color: #cbd5e1;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
+    body.light .glass-skill {
+      background: rgba(0, 0, 0, 0.05);
+      color: #004b5a;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 12px rgba(0, 100, 100, 0.1);
     }
 
-    #contact a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
+    body.light section p,
+    body.light section h2,
+    body.light .typing,
+    body.light footer {
+      color: #111;
     }
 
-    #contact a:hover {
-      color: #93c5fd;
-    }
-
-    .socials {
-      font-size: 2rem;
-      margin-top: 1.5rem;
+    .skills-wrap {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-    }
-
-    .socials a {
-      color: #cbd5e1;
-      transition: 0.3s;
-    }
-
-    .socials a:hover {
-      color: #60a5fa;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 0;
       font-size: 0.9rem;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #aaa;
     }
 
-    @media (max-width: 600px) {
-      .hero h1 {
+    .toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #1f2937;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    body.light .toggle-mode {
+      background: #ddd;
+      color: #111;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 4.5rem;
+      }
+
+      .typing {
         font-size: 2rem;
-      }
-
-      section h2 {
-        font-size: 2rem;
-      }
-
-      .skill-tags span {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-      }
-
-      .socials {
-        font-size: 1.5rem;
-        gap: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <div class="hero" data-aos="fade-down">
-    <h1>Hello, I'm <span>Pranjal</span></h1>
-    <p>Web Developer | ECE Enthusiast</p>
+<div id="particles-js"></div>
+
+<div class="toggle-mode" onclick="toggleMode()">🌗 Toggle Mode</div>
+
+<!-- HERO -->
+<section class="hero" data-aos="fade-up">
+  <h1>Hi, I'm Pranjal</h1>
+  <div class="typing"><span id="typed"></span></div>
+  <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let's Connect</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about" data-aos="fade-up">
+  <h2>About Me</h2>
+  <p style="max-width: 700px; margin: auto; line-height: 1.8; font-size: 1.1rem;">
+    I’m a passionate Web Developer and currently studying in the ECE department.
+    I love blending creativity with logic to create beautiful user experiences.
+    I’m also enthusiastic about electronics and communication systems!
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" data-aos="fade-up">
+  <h2>Skills</h2>
+  <div class="skills-wrap">
+    <span class="glass-skill">HTML</span>
+    <span class="glass-skill">CSS</span>
+    <span class="glass-skill">JavaScript</span>
+    <span class="glass-skill">Python</span>
+    <span class="glass-skill">C</span>
   </div>
+</section>
 
-  <!-- About Section -->
-  <section class="about" data-aos="fade-right">
-    <h2>About Me</h2>
-    <p>I am currently a web developer and a student in the ECE department. I enjoy building creative and functional websites, and I'm always learning new tech. I'm also familiar with core ECE subjects and love combining tech with electronics.</p>
-  </section>
+<!-- CONTACT -->
+<section id="contact" data-aos="fade-up">
+  <h2>Contact Me</h2>
+  <p style="font-size: 1.2rem;">Let’s build something amazing!</p>
+  <p style="margin-top: 1rem; color: #60a5fa;">📧 pranjalchakrabarty0812@gmail.com</p>
 
-  <!-- Skills Section -->
-  <section class="skills" data-aos="zoom-in-up">
-    <h2>Skills</h2>
-    <div class="skill-tags">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>Python</span>
-      <span>C</span>
-    </div>
-  </section>
+  <!-- Socials -->
+  <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 2rem; font-size: 2rem;">
+    <a href="https://github.com/your-username" target="_blank" style="color: #60a5fa; transition: 0.3s;" onmouseover="this.style.color='#9333ea'" onmouseout="this.style.color='#60a5fa'">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://linkedin.com/in/your-username" target="_blank" style="color: #60a5fa; transition: 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#60a5fa'">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" data-aos="fade-up">
-    <h2>Let's Connect</h2>
-    <p>Feel free to reach out for collaborations or just a friendly chat!</p>
-    <p>📧 <a href="mailto:pranjalchakrabarty0812@gmail.com">pranjalchakrabarty0812@gmail.com</a></p>
-    
-    <div class="socials">
-      <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer>
+  © 2025 Pranjal | Crafted with 💙 in code.
+</footer>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Pranjal. All rights reserved.
-  </footer>
 
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1200,
-      once: true
-    });
-  </script>
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.1/tsparticles.bundle.min.js"></script>
+<script>
+  new Typed("#typed", {
+    strings: ["Web Developer", "ECE Enthusiast", "Creative Coder"],
+    typeSpeed: 60,
+    backSpeed: 30,
+    loop: true
+  });
 
+  AOS.init();
+
+  tsParticles.load("particles-js", {
+    particles: {
+      number: { value: 80 },
+      size: { value: 3 },
+      color: { value: ["#3b82f6", "#06b6d4", "#9333ea"] },
+      links: { enable: true, color: "#60a5fa" },
+      move: { enable: true, speed: 1.2 }
+    }
+  });
+
+  function toggleMode() {
+    document.body.classList.toggle("light");
+  }
+</script>
 </body>
 </html>
