@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pranjal | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0a;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      line-height: 1.6;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: cyan;
+      text-shadow: 0 0 20px cyan;
+    }
+
+    .hero h1 span {
+      color: #93c5fd;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 1.25rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      color: #67e8f9;
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .skill-tags span {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: bold;
+      color: #38bdf8;
+      box-shadow: 0 0 10px #06b6d4;
+      transition: 0.3s;
+    }
+
+    .skill-tags span:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #3b82f6;
+    }
+
+    #contact p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    #contact a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    #contact a:hover {
+      color: #93c5fd;
+    }
+
+    .socials {
+      font-size: 2rem;
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .socials a {
+      color: #cbd5e1;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #60a5fa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      .skill-tags span {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .socials {
+        font-size: 1.5rem;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero" data-aos="fade-down">
+    <h1>Hello, I'm <span>Pranjal</span></h1>
+    <p>Web Developer | ECE Enthusiast</p>
+  </div>
+
+  <!-- About Section -->
+  <section class="about" data-aos="fade-right">
+    <h2>About Me</h2>
+    <p>I am currently a web developer and a student in the ECE department. I enjoy building creative and functional websites, and I'm always learning new tech. I'm also familiar with core ECE subjects and love combining tech with electronics.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" data-aos="zoom-in-up">
+    <h2>Skills</h2>
+    <div class="skill-tags">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Python</span>
+      <span>C</span>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Let's Connect</h2>
+    <p>Feel free to reach out for collaborations or just a friendly chat!</p>
+    <p>📧 <a href="mailto:pranjalchakrabarty0812@gmail.com">pranjalchakrabarty0812@gmail.com</a></p>
+    
+    <div class="socials">
+      <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Pranjal. All rights reserved.
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+  </script>
+
+</body>
+</html>
